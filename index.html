@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+　　layout: default
+　　title: 我的Blog
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<h2>{{ page.title }}</h2>
 
-<body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
-</body>
+<p>最新文章</p>
 
-</html>
+<ul>
+
+    　　　　{% for post in site.posts %}
+
+    <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+    　　　　{% endfor %}
+
+</ul>
